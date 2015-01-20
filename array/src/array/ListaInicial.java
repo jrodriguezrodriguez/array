@@ -6,7 +6,7 @@ public class ListaInicial {
 	
 	public static void main(String[] args) {
 		//creamos una lista vacia
-		ArrayList list = new ArrayList();
+		ArrayList<String> list = new ArrayList<String>();
 		
 		System.out.println("Tamaño de la lista: "+list.size());
 		
