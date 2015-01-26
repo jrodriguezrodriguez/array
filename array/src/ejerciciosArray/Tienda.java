@@ -33,11 +33,10 @@ public class Tienda {
 	public Producto productoMasCaro(){
 		double precio = 0.0;
 		Producto p=new Producto(0, "",lista.get(0).getPrecioProducto());
-		for (int i=0; i<lista.size(); i++){
-			
-			if (precio <lista.get(i).getPrecioProducto()){
-				precio=lista.get(i).getPrecioProducto();
-				p = lista.get(i);
+		for (Producto producto : lista) {
+			if (precio <producto.getPrecioProducto()){
+				precio=producto.getPrecioProducto();
+				p = producto;
 			}
 		}
 		return p;
@@ -45,12 +44,11 @@ public class Tienda {
 	
 	public Producto productoMasBarato(){
 		double precio = lista.get(0).getPrecioProducto();
-		Producto p=new Producto(0, "", lista.get(0).getPrecioProducto());
-		for (int i=0; i<lista.size(); i++){
-			
-			if (precio >lista.get(i).getPrecioProducto()){
-				precio=lista.get(i).getPrecioProducto();
-				p = lista.get(i);
+		Producto p=lista.get(0);
+		for (Producto producto : lista) {
+			if (precio >producto.getPrecioProducto()){
+				precio=producto.getPrecioProducto();
+				p = producto;
 			}
 		}
 		return p;
@@ -59,9 +57,4 @@ public class Tienda {
 	public String toString() {
 		return "Tienda lista=" + lista;
 	}
-	
-	
-	
-	
-
 }
